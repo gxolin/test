@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:testIap": "node dist/test-iap/server/server.mjs"
+    "serve:ssr:testIap": "node dist/test-iap/server/server.mjs",
+    "build-and-serve-android": "ng build --configuration development && npx cap sync && npx cap run android",
+    "build-and-serve-ios": "ng build --configuration development && npx cap sync && npx cap run ios"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +22,13 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@angular/service-worker": "^18.2.7",
     "@angular/ssr": "^18.2.5",
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/angular": "^2.0.3",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/ios": "^6.1.2",
+    "cordova-plugin-purchase": "^13.11.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -30,6 +38,7 @@
     "@angular-devkit/build-angular": "^18.2.5",
     "@angular/cli": "^18.2.5",
     "@angular/compiler-cli": "^18.2.0",
+    "@capacitor/cli": "^6.1.2",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
